@@ -1,0 +1,709 @@
+/* Alexander Miller */
+
+/* --------------- CSS RESET --------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+} 
+/* variables */
+
+:root {
+    --windrunner: #0F3562;
+    --skybreaker: #5F5D68;
+    --dustbringer: #B02D2C;
+    --edgedancer: #FFFFFF;
+    --truthwatcher: #1E4D39;
+    --lightweaver: #6C011D;
+    --elsecaller: #125064;
+    --willshaper: #672861;
+    --stoneward: #D26840;
+    --bondsmith: #EBC965;
+    --windrunner-lite: #1d66c0;
+    --skybreaker-lite: #bebbcc;
+    --dustbringer-lite: #ee3636;
+    --truthwatcher-lite: #43ac7e;
+    --lightweaver-lite: #df003b;
+    --elsecaller-lite: #31cbff;
+    --willshaper-lite: #b645ab;
+    --stoneward-lite: #ff8254;
+    --bondsmith-lite: #ffe492;
+
+    --titleFont: trajan-pro-3, serif;
+    --bodyFont: adobe-caslon-pro, serif; 
+}
+
+
+
+/* Global styles */
+header, footer {
+    background-color: var(--windrunner-lite);
+
+}
+
+header{
+    border-bottom:3px solid var(--lightweaver);
+    display: grid;
+    padding: 25px 10px 15px 30px
+}
+
+h1{
+    font-family: var(--titleFont);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 36px;
+}
+
+.sr-only {
+    display: none;
+}
+
+main p {
+    font-family: var(--bodyFont) serif;
+    font-style: normal;
+    font-size: 1.1em;
+    font-weight: 500;
+    background-color: var(--stoneward);
+}
+
+body {
+    background-color: var(--windrunner);
+}
+
+nav {
+    position: relative;
+    display: grid;
+    align-items: center;
+    top: 15px;
+}
+nav ul {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,.85);
+    border:2px solid var(--elsecaller-lite);
+    z-index: 1;
+    width: 150px;
+    margin-left: -35px;
+    top: 75px;
+
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav a {
+    color: var(--edgedancer);
+    visibility: visible;
+    display:grid;
+    text-align:center;
+    text-decoration:none;
+    justify-self: center;
+}
+
+nav li {
+    border-bottom:2px solid var(--elsecaller-lite);
+}
+
+nav li:first-child {
+    border-top:2px solid var(--elsecaller-lite);
+}
+
+header h2 {
+    font-family: var(--titleFont);
+    font-weight: 900;
+    font-style: normal;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+nav h3 {
+    display:none ;
+}
+
+nav img {
+    width: 75px;
+}
+
+
+nav a:hover, #navButton:hover {
+    color:var(--willshaper-lite);
+}
+
+nav:hover ul {
+    display: inline-block;
+}
+
+main {
+    padding:2%;
+}
+#ordersNav, #rosharNav{
+    display: grid;
+}
+
+#ordersNav h3, #rosharNav h3{
+    display: none;
+}
+
+#ordersNav ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align:center; 
+    margin-top: 10px;   
+}
+
+#rosharNav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align:center; 
+    margin-top: 10px;   
+}
+
+#ordersNav ul li, #rosharNav ul li {
+    font-family: var(--bodyFont);
+    font-size: 1em;
+    padding: 5px;
+}
+
+#ordersNav ul li a, #rosharNav ul li a{    
+    color: var(--edgedancer);
+    justify-content: center;
+
+}
+
+#ordersNav ul li a:hover, #rosharNav ul li a:hover{
+    color: var(--willshaper-lite);
+}
+
+#section1 h3, #section2 h3, #section3 h3, #section4 h3  {
+    background-color: var(--willshaper);
+    padding: 5px ;
+    font-family: var(--titleFont);
+    font-weight: 600;
+    text-align: center;
+    font-size: 1em;
+    border: 3px solid var(--bondsmith);
+    border-bottom: none;
+}
+
+section a {
+    text-decoration: none;
+    color: var(--bondsmith-lite);
+}
+
+section a:hover {
+    color: var(--edgedancer);
+}
+
+section figure {
+    padding: 0px;
+    margin-top: 10px;
+    background-color: var(--windrunner-lite);
+    border: 3px solid var(--bondsmith);
+}
+
+#section1 figure, #section2 figure, #section3 figure, #section4 figure, .tenOrdersSection figure{
+    padding: 10px;
+    margin-top: 0px;
+}
+
+
+
+section figure img {
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+}
+
+section figure figcaption {
+    font-family: var(--bodyFont);
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+    position: relative;
+    top: 5px;
+    color: var(--bondsmith);
+}
+
+footer {
+    border-top:3px solid var(--lightweaver);
+    height:auto;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+/* Ten Order Styles */
+
+section h4{
+    visibility: hidden;
+    display: none;
+}
+
+section h3{
+    font-family: var(--titleFont);
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+    background-color: var(--edgedancer);
+    padding-top: 10px;
+}
+
+em {
+    font-style: italic;
+    font-weight: 700;
+}
+
+.placard{
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    padding: 10px;
+}
+
+.tenOrdersPlacard{
+    background-color: var(--willshaper);
+
+}
+
+.heraldFacade {
+    width: 15%;
+}
+
+.heraldLikeness figure{
+    width: 100%;
+    max-width: 600px;
+    padding: 0px;
+}
+
+section div {
+    max-width: 600px;
+    padding: 10px 10px 10px 10px;
+    background-color: var(--windrunner-lite);
+    border-left: 3px solid var(--bondsmith);
+    border-right: 3px solid var(--bondsmith);
+
+}
+
+.tenOrdersSection .heraldLikeness{
+    border-top: none;
+}
+
+section div img{
+    float: left;
+}
+
+section div p {
+    background-color: var(--edgedancer);
+    text-align: left;
+}
+section div p a {
+    color: var(--windrunner-lite);
+}
+
+section div p a:hover {
+    color: var(--lightweaver-lite);
+}
+span {
+    font-family: var(--titleFont);
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+    line-height: 120%;
+}
+
+.subtext {
+    font-family: var(--titleFont);
+    font-size: 1.3em;
+    font-weight: 700;
+    text-align: center;
+    line-height: 120%;
+}
+
+b{
+    font-family: var(--titleFont);
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: center;
+}
+
+#rosharMainContent section div img {
+    width: 100%;
+    max-width: 252px;
+    
+}
+
+.floatleft{
+    float: left;
+    clear: left;
+    background-color: var(--edgedancer);
+    margin-right:10px;
+
+}
+
+.floatright{
+    float: right;
+    clear: right;
+    background-color: var(--edgedancer);
+    margin-left:10px;
+}
+
+#honorspren div, #highspren div, #ashspren div, #cultivationspren div, #mistspren div, #cryptics div, #inkspren div, #lightspren div, #peakspren div, #greatSpren div, #geographyAndEcology div, #shards div, #singers div{
+    border-top: 3px solid var(--bondsmith);
+    border-bottom: 3px solid var(--bondsmith);
+    padding-top: 0px;
+}
+
+#honorspren div p, #highspren div p, #ashspren div p, #cultivationspren div p, #mistspren div p, #cryptics div p, #inkspren div p, #lightspren div p, #peakspren div p, #greatSpren div p, #geographyAndEcology div p:first-of-type, #shards div p:first-of-type, #singers div p:first-of-type {
+    margin-top: 10px;
+}
+
+#honorspren div h3, #highspren div h3, #ashspren div h3, #cultivationspren div h3, #mistspren div h3, #cryptics div h3, #inkspren div h3, #lightspren div h3, #peakspren div h3, #greatSpren div h3, #geographyAndEcology div h3, #shards div h3, #singers div h3{
+    background-color: var(--willshaper);
+    color: var(--bondsmith);
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--bondsmith);
+    margin-left: -10px;
+  margin-right: -10px;
+}
+
+#honorspren figure, #highspren figure, #ashspren figure, #cultivationspren figure, #mistspren figure, #cryptics figure, #inkspren figure, #lightspren figure, #peakspren figure, #greatSpren figure, #geographyAndEcology figure, #shards figure, #singers figure{
+    background-color: var(--lightweaver);
+    border: none;
+    padding-bottom: 5px;
+}
+
+#geographyAndEcology figure, #shards figure, #singers figure {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* skip code */
+
+#skip{
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    color: var(--edgedancer);
+}
+   
+  #skip:focus{
+    position: static;
+    width: auto;
+    height: auto;
+}
+
+button img {
+    width: 15px;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px; 
+    right: 30px; 
+    z-index: 99; 
+    border: none; 
+    outline: none;
+    background-color: var(--skybreaker-lite);
+    opacity: 0.75; 
+    cursor: pointer; 
+    padding: 15px; 
+    border-radius: 50px; 
+  }
+  
+  #myBtn:hover {
+    background-color: #555; 
+  }
+
+/* form code */
+
+form {
+    border: var(--bondsmith) solid 3px;
+    background-color: var(--windrunner-lite);
+    width: 100%;
+    max-width: 350px;
+}
+
+form h2{
+    font-family: var(--titleFont);
+    font-size: 2em;
+    color: var(--edgedancer);
+    padding: 10px 10px;
+    font-weight: 700;
+    text-align: center;
+}
+
+form label, form fieldset legend{
+    font-family: var(--bodyFont);
+    font-size: 1em;
+    color: var(--edgedancer);
+    margin-left: 5px;
+
+}
+
+input[type=text], input[type=email], input[type=tel], textarea {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    border: var(--bondsmith) solid 2px;
+    border-radius: 7px;
+    margin-left: 5px;
+}
+
+.radio-label{
+    font-size: 1.3em;
+}
+
+form input[type=submit]{
+    padding: 10px 20px 10px 20px;
+    font-family: var(--titleFont);
+    font-size: 1.2em;
+    background: var(--edgedancer);
+    color: var(--windrunner);
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+#nameError, #emailError, #reedError, #commentError {
+    margin-bottom: 10px;
+    color: var(--bondsmith);
+    font-family: var(--bodyFont);
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+#formSection div{
+    padding: 0px;
+    background-color: inherit;
+    border-left: none;
+    border-right: none;
+}
+
+#formSection div h2{
+    background-color: var(--willshaper);
+    color: var(--bondsmith);
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--bondsmith);
+}
+
+#contactFormMainContent figure {
+    display: grid;
+    justify-content: center;
+    align-self: center;
+}
+
+#contactFormMainContent figure img{
+    width: 100%;
+    max-width: 350px;
+}
+
+#myForm div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div li {
+    list-style: none;
+    margin-left: 10px;
+}
+
+/* ------- Begin Custom Styles ------- */
+/* mobile styles */
+@media screen and (max-width:619px) {
+
+   header{
+    grid-template-columns: 1fr;
+    height: auto;
+   }
+
+   h1, nav {
+    margin:0 auto;
+    text-align:center;
+    }
+
+
+    main p {
+        padding: 10px 15px 10px 15px;
+        text-align: center;
+        line-height: 120%;
+    }
+
+    section {
+        display: grid;
+        justify-content: center;
+        margin-top: 17.5px;
+        margin-bottom: 17.5px;
+    }
+
+    #navButton, nav, nav ul {
+        border:none;
+    }
+
+    .placard{
+        padding:0px;
+    }
+
+}
+
+
+
+/* small tablet styles */
+@media screen and (min-width:620px) {
+    
+       h1, nav {
+        margin:0 auto;
+        text-align:center;
+        }
+    
+        #tenOrdersMain, #sprenMainContent, #rosharMainContent {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+    
+        main p {
+            padding: 10px 5px 10px 5px;
+            text-align: center;
+            line-height: 120%;
+        }
+
+
+        section div p {
+            margin: 0;
+        }
+    
+        section {
+            display: grid;
+            justify-content: center;
+            margin-top: 17.5px;
+            margin-bottom: 17.5px;
+        }
+    
+        #navButton, nav, nav ul {
+            border:none;
+        }
+
+        .placard{
+            padding:0px;
+        }
+
+        #ordersNav ul{
+            grid-template-columns: repeat(5,1fr);
+        }
+    
+}
+
+/* large tablet/laptop */
+@media screen and (min-width: 960px){
+
+    header{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header h2 {
+        grid-column-start: 1;
+    }
+
+    nav img{
+        display: none;
+    }
+
+    nav{
+        position: inherit;
+        grid-row-start: 1;
+        grid-column-start: 2;
+    }
+
+    nav ul {
+        display: grid;
+        grid-template-columns:repeat(5, 1fr);
+        position: inherit;
+        width: auto;
+        margin-left: auto;
+        background-color: inherit;
+    }
+
+    nav ul li{
+        border-bottom: none;
+        border-left: 1px solid var(--dustbringer-lite);
+        font-size: 1.5em;
+    }
+
+    nav ul li:first-child{
+        border-left: none;
+        border-top: none;
+    }
+
+    nav:hover ul{
+        display: grid;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }   
+
+    .importantText {
+        grid-column: 1 / 3;
+    }
+
+    section {
+        margin: 10px;
+    }
+
+    #contactFormMainContent figure img{
+        max-width: 100%;
+        max-height: 700px;
+    }
+
+    #ordersNav ul{
+        grid-template-columns: repeat(10, 1fr);
+    }
+}

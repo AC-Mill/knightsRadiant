@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Alexander Miller">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/kek8iqj.css">
+    <script src="script.js" defer></script>
+    <title>The Knights Radiant Official Webpage</title>
+</head>
+<body>
+    <a href="#contactFormMainContent" id="skip">Skip to Main Content</a>
+    <header>
+        <h1>The Knights Radiant Official Webpage</h1>
+        <h2>Speak Again the Ancient Oaths</h2>
+        <nav>
+            <h3 class="sr-only">Main Navigation</h3>
+            <img src="images/KnightRadiantsymbol.webp" alt="The symbol of the Knights Radiant serving as the dropdown menu when hovered over.">
+            <h3 id="navButton">Menu</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tenOrders.html">The&nbsp;Ten<br>Orders </a></li>
+                <li><a href="spren.html">Radiant <br>Spren</a></li>
+                <li><a href="roshar.html">Roshar<br>Overview</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main id="contactFormMainContent">
+        <p class="importantText">Have you recently spoken the Words, bonded a spren and developed the ability to inhale Stormlight? Then Dalinar Kholin wants <em>you</em> to fill out this contact form and meet your fellow Knight Radiants in the peaks of Urithiru, home of the Radiants.</p>
+        <section id="formSection">
+            <div>
+                <form id="myForm">
+                    <h2>Knights Radiant Contact Form</h2>
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <div id="nameError"></div>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div id="emailError"></div>
+                    <div>
+                        <label for="reed">Span Reed Pairing Number (000-000-0000)</label>
+                        <input type="tel" id="reed" name="reed" required>
+                    </div>
+                    <div id="reedError"></div>
+                    <fieldset>
+                        <legend>Preferred Contact Method</legend>
+                        <label for="prefEmail">
+                            <span class="radio-input">
+                                <input type="radio" name="contactPref" id="prefEmail" required checked>
+                                <span class="radio-control"></span>
+                            </span>
+                            <span class="radio-label">Email</span>
+                        </label>
+                        <label for="prefPhone">
+                            <span class="radio-input">
+                                <input type="radio" name="contactPref" id="prefPhone">
+                                <span class="radio-control"></span>
+                            </span>
+                            <span class="radio-label">Span&nbsp;Reed</span>
+                        </label>
+                    </fieldset>
+                    <div>
+                        <br>
+                        <label for="comments">Add any comments below:</label>
+                        <textarea id="comments" name="comments" rows="4" cols="30" required></textarea>
+                    </div>
+                    <div id="commentError"></div>
+                    <div>
+                        <input type="submit" id="submitForm" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </section>
+        <figure id="firstIdealPoster">
+                <img src="images/First_Ideal_poster.jpg" alt="Two unknown Knight Radaint, clad in shardplate and holding their shardblades stand at rest in front of a banner that displays the first Oath of the Knights: Life before Death, Strength before Weakness, Journey before Destination.">
+        </figure>
+    </main>
+    <footer>
+        <p>All Rights Reserved</p>
+</footer>
+</body>
